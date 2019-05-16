@@ -1,0 +1,10 @@
+url: https://yourwebsite.tld
+markdown: kramdown
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - README.md
+  - transifex-source-file.yml
+  - .tx/config

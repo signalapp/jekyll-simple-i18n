@@ -1,0 +1,17 @@
+---
+title: Our website
+translate: true
+---
+<html lang="{{ page.language | replace: "_", "-" | default: "en" }}">
+  <head>
+    {% hreflang %}
+    <title>{{ page.title }}</title>
+  </head>
+
+  <body>
+    <h1>{% translate Hello world! %}</h1>
+    <p>{% translate This is an example. %}</p>
+
+    <p>{% translate This string will appear in English on generated pages until a translation is added to the YAML file for that language. %}</p>
+  </body>
+</html>
