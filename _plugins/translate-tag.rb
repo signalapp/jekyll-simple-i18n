@@ -11,22 +11,16 @@ module Jekyll
 
     def render(context)
       page_language = context.environments.first["page"]["language"]
+      site          = context.registers[:site]
 
       if page_language.nil?
         Transifex::SourceFile.add_entry(transifex_id, text)
 
         text
       else
-        liquid = <<-H2O
-{%- assign translated_string = site.data.languages.#{page_language}.#{transifex_id} -%}
-{%- if translated_string -%}
-{{ translated_string | strip_newlines }}
-{%- else -%}
-#{text}
-{%- endif -%}
-        H2O
+        translated_string = site.data["languages"][page_language][transifex_id]
 
-        Liquid::Template.parse(liquid).render(context)
+        translated_string.nil? ? text : translated_string.strip
       end
     end
   end

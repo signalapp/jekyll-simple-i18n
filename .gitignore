@@ -1,4 +1,6 @@
+.bundle
 Gemfile.lock
+.jekyll-cache
 _site
-vendor
 transifex-source-file.yml
+vendor

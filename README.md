@@ -14,7 +14,7 @@ A simple approach to internationalization for [Jekyll](https://jekyllrb.com/) we
 
 ### Demo
 
-1. Clone the repo. Run `bundle install --deployment` inside the cloned directory.
+1. Clone the repo. Run `bundle install --path vendor/bundle` inside the cloned directory.
 2. Build the site: `bundle exec jekyll build`.
 3. You'll notice that a source file (`transifex-source-file.yml`) has been automatically generated.
    * New strings can be added to any page using the custom Liquid tag: `{% translate This is a new string. %}`
